@@ -3,8 +3,8 @@
  * @param parent - 父元素
  * @param child - 子元素
  */
-export function mount(parent: SVGElement | HTMLElement | null, child: SVGElement | HTMLElement): void {
+export function mount(parent: SVGElement, child: SVGElement): void {
   if (parent) {
-    parent.appendChild(child);
+    parent.appendChild(child)
   }
 }

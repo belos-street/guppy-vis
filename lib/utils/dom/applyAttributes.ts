@@ -5,7 +5,7 @@
  */
 export function applyAttributes(element: SVGElement, attributes: Record<string, string | number>): void {
   for (const [key, value] of Object.entries(attributes)) {
-    const kebabCaseKey = key.replace(/[A-Z]/g, (d) => `-${d.toLocaleLowerCase()}`);
-    element.setAttribute(kebabCaseKey, String(value));
+    const kebabCaseKey = key.replace(/[A-Z]/g, (d) => `-${d.toLocaleLowerCase()}`)
+    element.setAttribute(kebabCaseKey, String(value))
   }
 }
