@@ -1,4 +1,4 @@
-import { applyTransform } from 'lib/utils'
+import { applyTransform } from 'lib/core/renderer/dom'
 import type { RendererContext, TransformType } from '../type'
 
 /**

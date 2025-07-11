@@ -1,4 +1,4 @@
-import { createSVGElement, applyAttributes, mount } from 'lib/utils'
+import { createSVGElement, applyAttributes, mount } from 'lib/core/renderer/dom'
 import type { RendererContext, SVGShapeType, BaseSVGAttributes, SVGAttributesMap } from '../type'
 
 /**

@@ -11,14 +11,6 @@ import { transform } from '../transform'
  * @param e - 水平移动
  * @param f - 垂直移动
  */
-export function matrix(
-  context: RendererContext,
-  a: number,
-  b: number,
-  c: number,
-  d: number,
-  e: number,
-  f: number
-): void {
+export function matrix(context: RendererContext, a: number, b: number, c: number, d: number, e: number, f: number): void {
   transform('matrix', context, a, b, c, d, e, f)
 }
