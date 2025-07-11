@@ -13,7 +13,7 @@ import type {
 /**
  * 渲染器配置选项
  */
-export interface RendererOptions {
+type RendererOptions = {
   line?: typeof line
   circle?: typeof circle
   text?: typeof text
@@ -25,7 +25,7 @@ export interface RendererOptions {
 /**
  * 渲染器接口
  */
-export interface Renderer {
+type Renderer = {
   line: (attributes: LineSVGAttributes) => SVGElement
   circle: (attributes: CircleSVGAttributes) => SVGElement
   text: (attributes: TextSVGAttributes) => SVGElement
