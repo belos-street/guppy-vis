@@ -2,10 +2,11 @@
 
 import { defineConfig } from 'vite'
 import UnoCSS from 'unocss/vite'
+import react from '@vitejs/plugin-react'
 import { fileURLToPath, URL } from 'node:url'
 
 export default defineConfig({
-  plugins: [UnoCSS()],
+  plugins: [UnoCSS(), react()],
   test: {
     environment: 'happy-dom'
   },
