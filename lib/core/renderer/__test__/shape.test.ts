@@ -40,9 +40,9 @@ describe('test core/renderer/dom', () => {
 
   test('path', () => {
     const context = createContext('400', '400')
-    const el = path(context, { d: 'M100,100 L200,200' })
+    const el = path(context, { d: [['M', 10, 10], ['L', 100, 100], ['L', 100, 10], ['Z']] })
     expect(el.tagName).toBe('path')
-    expect(el.getAttribute('d')).toBe('M100,100 L200,200')
+    expect(el.getAttribute('d')).toBe('M 10 10 L 100 100 L 100 10 Z')
   })
 
   test('text', () => {

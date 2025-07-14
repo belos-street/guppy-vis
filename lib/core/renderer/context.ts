@@ -19,7 +19,6 @@ export function createContext(width: string, height: string): RendererContext {
 
   const g = createSVGElement('g')
   mount(svg, g)
-
   return {
     node: svg, //画布节点
     group: g //挂载节点
@@ -29,7 +28,7 @@ export function createContext(width: string, height: string): RendererContext {
 /**
  * @function save
  * @param context 渲染上下文
- * @description 保存当前的状态，包括当前的变换矩阵、当前的填充颜色、当前的边框粗细等。
+ * @description  创建新的 g 节点，将其挂载到当前group节点下，并更新上下文的group指向这个新节点。
  */
 export function save(context: RendererContext) {
   const { group } = context
@@ -41,7 +40,7 @@ export function save(context: RendererContext) {
 /**
  * @function restore
  * @param context 渲染上下文
- * @description 恢复之前保存的状态。
+ * @description 将context 的 group 节点指向 父级g节点。
  */
 export function restore(context: RendererContext) {
   const { group } = context

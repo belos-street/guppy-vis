@@ -66,7 +66,7 @@ export interface LineSVGAttributes extends BaseSVGAttributes {
  * 路径SVG属性
  */
 export interface PathSVGAttributes extends BaseSVGAttributes {
-  d?: string | Array<string | number>
+  d?: string | (string | number)[][]
 }
 
 /**
