@@ -1,5 +1,5 @@
 import { createSVGElement, mount } from 'lib/core/renderer/src/dom'
-import type { RendererContext } from './type'
+import type { RendererContext } from 'lib/core/renderer/type'
 
 /**
  * @function createContext
@@ -24,6 +24,11 @@ export function createContext(width: string, height: string): RendererContext {
     group: g //挂载节点
   }
 }
+
+/**
+ * - context.group 就像一个指针，指向当前活动的SVG group 元素，通过改变这个指针的指向，来实现不同层级的绘制操作。
+ * - 这种设计使得渲染器可以方便地管理变换状态和元素层级，类似于图形API中的状态栈概念，但实现方式是通过改变指针指向而不是真正的栈操作。
+ */
 
 /**
  * @function save
