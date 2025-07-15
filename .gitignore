@@ -23,7 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
-sparrow
+#sparrow
 llms.md
 prompt
 coverage
