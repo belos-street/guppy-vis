@@ -1,3 +1,3 @@
-import { createUUID } from './uuid'
+import { createUUID } from './src/random'
 
 export { createUUID }
