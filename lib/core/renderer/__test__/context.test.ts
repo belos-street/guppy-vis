@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest'
-import { createContext, save, restore } from '../context'
+import { createContext, save, restore } from '../src/context'
 
 describe('test core/renderer/context', () => {
   test('createContext', () => {

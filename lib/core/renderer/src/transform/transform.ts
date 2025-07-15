@@ -1,5 +1,5 @@
-import { applyTransform } from 'lib/core/renderer/dom'
-import type { RendererContext, TransformType } from '../type'
+import { applyTransform } from 'lib/core/renderer/src/dom'
+import type { RendererContext, TransformType } from 'lib/core/renderer/type'
 
 /**
  * 应用变换到渲染上下文

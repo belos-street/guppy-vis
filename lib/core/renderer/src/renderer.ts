@@ -8,7 +8,7 @@ import type {
   PathSVGAttributes,
   RectSVGAttributes,
   TextSVGAttributes
-} from './type'
+} from '../type'
 
 /**
  * 渲染器配置选项

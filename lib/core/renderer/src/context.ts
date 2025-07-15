@@ -1,4 +1,4 @@
-import { createSVGElement, mount } from 'lib/core/renderer/dom'
+import { createSVGElement, mount } from 'lib/core/renderer/src/dom'
 import type { RendererContext } from './type'
 
 /**

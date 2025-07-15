@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest'
-import { shape, circle, rect, line, path, text } from '../shape'
-import { createContext } from '../context'
+import { shape, circle, rect, line, path, text } from '../src/shape'
+import { createContext } from '../src/context'
 
 describe('test core/renderer/dom', () => {
   test('shape', () => {

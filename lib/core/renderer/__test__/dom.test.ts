@@ -1,4 +1,4 @@
-import { createSVGElement, applyAttributes, applyTransform, mount } from '../dom'
+import { createSVGElement, applyAttributes, applyTransform, mount } from '../src/dom'
 import { describe, test, expect } from 'vitest'
 
 describe('test core/renderer/dom', () => {

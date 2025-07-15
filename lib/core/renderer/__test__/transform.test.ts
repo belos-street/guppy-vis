@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest'
-import { transform, matrix, translate, rotate, scale, skewX, skewY } from '../transform'
-import { createContext } from '../context'
+import { transform, matrix, translate, rotate, scale, skewX, skewY } from '../src/transform'
+import { createContext } from '../src/context'
 
 describe('test core/renderer/transform', () => {
   test('transform', () => {
@@ -11,8 +11,6 @@ describe('test core/renderer/transform', () => {
     transform('skewX', context, 45)
     transform('skewY', context, 45)
     transform('matrix', context, 1, 2, 3, 4, 5, 6)
-
-    console.log(context.group.getAttribute('transform'))
 
     expect(context.group.getAttribute('transform')).toBe(
       'translate(10, 20) rotate(45) scale(2, 3) skewX(45) skewY(45) matrix(1, 2, 3, 4, 5, 6)'

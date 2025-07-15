@@ -1,4 +1,4 @@
-import { createRenderer } from '../renderer'
+import { createRenderer } from '../src/renderer'
 
 import { describe, test, expect } from 'vitest'
 

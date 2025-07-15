@@ -1,5 +1,5 @@
-import { createSVGElement, applyAttributes, mount } from 'lib/core/renderer/dom'
-import type { RendererContext, SVGShapeType, BaseSVGAttributes, SVGAttributesMap } from '../type'
+import { createSVGElement, applyAttributes, mount } from 'lib/core/renderer/src/dom'
+import type { RendererContext, SVGShapeType, BaseSVGAttributes, SVGAttributesMap } from 'lib/core/renderer/type'
 
 /**
  * 创建SVG形状元素

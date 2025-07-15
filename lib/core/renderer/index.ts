@@ -1,1 +1,1 @@
-export { createRenderer } from './renderer'
+export { createRenderer } from './src/renderer'
