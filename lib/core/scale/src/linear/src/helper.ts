@@ -11,5 +11,3 @@
 export function normalize(value: number, start: number, stop: number) {
   return (value - start) / (stop - start)
 }
-
-export function tickStep(min: number, max: number, count: number) {}

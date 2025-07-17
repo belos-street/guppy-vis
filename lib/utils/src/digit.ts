@@ -29,13 +29,9 @@ export function floor(n: number, base: number) {
 }
 
 /**
- * 四舍五入
+ * 四舍五入，保留12位小数的精度，同时避免 JavaScript 浮点数计算中常见的精度误差。
  * @param n 要取整的数值
  * @returns 四舍五入后的数值
- *
- * @example
- * round(10.123456) // 10.1235
- * round(10.123456789) // 10.1235
  */
 export function round(n: number) {
   return Math.round(n * 1e12) / 1e12

@@ -1,7 +1,7 @@
 //在可视化中的比例尺，就是用来度量数据属性的，将数据抽象的属性映射为一个视觉属性
 
 export { createIdentity } from './src/identity'
-// export { createLinear } from './linear'
+export { createLinear } from './src/linear'
 // export { createOrdinal } from './ordinal'
 // export { createBand } from './band'
 // export { createPoint } from './point'
