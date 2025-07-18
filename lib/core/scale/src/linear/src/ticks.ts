@@ -1,5 +1,8 @@
 import { round } from 'lib/utils'
 
+const thresholdFactor10 = Math.sqrt(50) // 大约 7.07，接近 10 的调整阈值
+const thresholdFactor5 = Math.sqrt(10) // 大约 3.16，接近 5 的调整阈值
+const thresholdFactor2 = Math.sqrt(2) // 大约 1.41，接近 2 的调整阈值
 /**
  * 计算刻度步长，这个算法的目的是为图表生成"美观"的刻度值，使它们更易于人类阅读和理解。
  * @param minValue 定义域的最小值
@@ -8,10 +11,6 @@ import { round } from 'lib/utils'
  * @returns 优化后的刻度步长
  */
 export function tickStep(minValue: number, maxValue: number, tickCount: number) {
-  const thresholdFactor10 = Math.sqrt(50) // 大约 7.07，接近 10 的调整阈值
-  const thresholdFactor5 = Math.sqrt(10) // 大约 3.16，接近 5 的调整阈值
-  const thresholdFactor2 = Math.sqrt(2) // 大约 1.41，接近 2 的调整阈值
-
   // 如果刻度数小于等于0，返回默认步长1，避免除以0导致Infinity
   if (tickCount <= 0) return 1
 

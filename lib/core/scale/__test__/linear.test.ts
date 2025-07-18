@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { normalize } from '../src/linear/src/helper'
-import { interpolateNumber, interpolateColor } from '../src/linear/src/interpolate'
+import { interpolateNumber, interpolateColor, type RGBColor } from '../src/linear/src/interpolate'
 import { createLinear } from '../src/linear'
 import { tickStep, ticks } from '../src/linear/src/ticks'
 
@@ -88,17 +88,18 @@ describe('scale/linear', () => {
     expect(scale(9.9)).toBe(99)
   })
 
-  // it('createLinear 创建线性颜色比例尺', () => {
-  //   const { scale } = createLinear(
-  //     [0, 1],
-  //     [
-  //       [255, 0, 0],
-  //       [0, 0, 255]
-  //     ],
-  //     interpolateColor
-  //   )
-  //   expect(scale(0)).toBe('#ff0000')
-  //   expect(scale(0.5)).toBe('#7f007f')
-  //   expect(scale(1)).toBe('#0000ff')
-  // })
+  it('createLinear 创建线性颜色比例尺', () => {
+    // 使用泛型明确指定类型
+    const { scale } = createLinear<RGBColor, string>(
+      [0, 1],
+      [
+        [255, 0, 0],
+        [0, 0, 255]
+      ],
+      interpolateColor
+    )
+    expect(scale(0)).toBe('#ff0000')
+    expect(scale(0.5)).toBe('#7f007f')
+    expect(scale(1)).toBe('#0000ff')
+  })
 })
