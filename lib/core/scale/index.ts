@@ -2,7 +2,7 @@
 
 export { createIdentity } from './src/identity'
 export { createLinear } from './src/linear'
-// export { createOrdinal } from './ordinal'
+export { createOrdinal } from './src/ordinal'
 // export { createBand } from './band'
 // export { createPoint } from './point'
 // export { createQuantile } from './quantile'
