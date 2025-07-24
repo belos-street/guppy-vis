@@ -27,3 +27,5 @@ dist-ssr
 llms.md
 prompt
 coverage
+
+.vercel
