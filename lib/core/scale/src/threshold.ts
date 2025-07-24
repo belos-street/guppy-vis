@@ -1,3 +1,5 @@
+import { bisect } from 'lib/utils'
+
 type Threshold<T> = {
   domain: [number, number]
   range: T[]
