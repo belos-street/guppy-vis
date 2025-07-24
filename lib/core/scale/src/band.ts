@@ -2,14 +2,14 @@
 
 import { createOrdinal } from './ordinal'
 
-type BandProps<T> = {
+export type BandProps<T> = {
   domain: T[]
   range: [number, number] // Band比例尺的range必须是一个数值区间
   padding?: number // 内边距，控制条带之间的间隔
   margin?: number // 外边距，控制条带与区间边界的间隔
 }
 
-type BandScale<T, U> = {
+export type BandScale<T, U> = {
   (key: T): U
   bandWidth: () => number
   step: () => number
