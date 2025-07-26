@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { group, bisect } from '../src/array'
 
-describe('utils/array', () => {
+describe('utils/array/group', () => {
   it('group', () => {
     const array = [1, 2, 3, 4, 5]
     const key = (d: number) => (d % 2 === 0 ? 'even' : 'odd')
@@ -13,7 +13,9 @@ describe('utils/array', () => {
       ])
     )
   })
+})
 
+describe('utils/array/bisect', () => {
   it('should find correct insertion position in sorted number array', () => {
     const sortedArray = [1, 3, 5, 7, 9]
 
@@ -45,10 +47,6 @@ describe('utils/array', () => {
     expect(bisect(sortedArray, 7)).toBe(5) // 返回第一个匹配位置
   })
 
-
-
-
-
   it('should handle empty array', () => {
     const emptyArray: number[] = []
 
@@ -78,12 +76,10 @@ describe('utils/array', () => {
     const sortedArray = [10, 20, 30, 40, 50]
 
     // 测试简化后的 bisect 函数
-    expect(bisect(sortedArray, 5)).toBe(0)  // 小于所有元素
+    expect(bisect(sortedArray, 5)).toBe(0) // 小于所有元素
     expect(bisect(sortedArray, 15)).toBe(1) // 在10和20之间
     expect(bisect(sortedArray, 20)).toBe(1) // 等于数组中的元素
     expect(bisect(sortedArray, 35)).toBe(3) // 在30和40之间
     expect(bisect(sortedArray, 60)).toBe(5) // 大于所有元素
   })
-
-
 })
