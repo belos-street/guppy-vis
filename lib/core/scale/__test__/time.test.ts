@@ -6,7 +6,7 @@ describe('scale/time', () => {
   it('createTime 创建时间数字比例尺', () => {
     const startDate = new Date('2023-01-01')
     const endDate = new Date('2023-12-31')
-    const { scale } = createTime({
+    const scale = createTime({
       domain: [startDate, endDate],
       range: [0, 100]
     })
@@ -27,10 +27,11 @@ describe('scale/time', () => {
   it('createTime 生成时间刻度', () => {
     const startDate = new Date('2023-01-01')
     const endDate = new Date('2023-12-31')
-    const { ticks } = createTime({
+    const scale = createTime({
       domain: [startDate, endDate],
       range: [0, 100]
     })
+    const ticks = scale.ticks
 
     // 测试刻度生成
     const timeTicksCount = 6 // 生成6个刻度
@@ -57,10 +58,12 @@ describe('scale/time', () => {
     const startDate = new Date('2023-01-15') // 不是月初
     const endDate = new Date('2023-11-20') // 不是月末
 
-    const { nice, ticks } = createTime({
+    const scale = createTime({
       domain: [startDate, endDate],
       range: [0, 100]
     })
+    const nice = scale.nice
+    const ticks = scale.ticks
 
     // 调用nice函数调整范围
     nice(6)
@@ -86,7 +89,7 @@ describe('scale/time', () => {
     const startDate = new Date('2023-01-01')
     const endDate = new Date('2023-12-31')
 
-    const { scale } = createTime<RGBColor, string>({
+    const scale = createTime<RGBColor, string>({
       domain: [startDate, endDate],
       range: [
         [255, 0, 0],

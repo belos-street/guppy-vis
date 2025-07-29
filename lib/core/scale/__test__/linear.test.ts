@@ -67,7 +67,8 @@ describe('scale/linear', () => {
   })
 
   it('createLinear 创建线性数字比例尺', () => {
-    const { scale, ticks } = createLinear([0, 1], [0, 10])
+    const scale = createLinear([0, 1], [0, 10])
+    const ticks = scale.ticks
     expect(scale(0)).toBe(0)
     expect(scale(0.5)).toBe(5)
     expect(scale(0.6)).toBe(6)
@@ -78,7 +79,9 @@ describe('scale/linear', () => {
   })
 
   it('createLinear 增强定义域可读性', () => {
-    const { ticks, nice, scale } = createLinear([0.1, 9.9], [0, 100])
+    const scale = createLinear([0.1, 9.9], [0, 100])
+    const ticks = scale.ticks
+    const nice = scale.nice
     expect(ticks(6)).toEqual([2, 4, 6, 8])
 
     nice(6) // 定义域变成了[0, 10]
@@ -90,7 +93,7 @@ describe('scale/linear', () => {
 
   it('createLinear 创建线性颜色比例尺', () => {
     // 使用泛型明确指定类型
-    const { scale } = createLinear<RGBColor, string>(
+    const scale = createLinear<RGBColor, string>(
       [0, 1],
       [
         [255, 0, 0],

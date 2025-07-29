@@ -17,11 +17,12 @@ export function createTime<T extends number | RGBColor, U>({ domain, range, inte
   const transform = (x: Date) => x.getTime()
   const transformedDomain = domain.map(transform) as [number, number]
 
-  const { scale, ticks, nice } = createLinear(transformedDomain, range, interpolate)
+  const linearScale = createLinear(transformedDomain, range, interpolate)
 
-  return {
-    scale: (x: Date) => scale(transform(x)),
-    ticks: (tickCount: number) => ticks(tickCount).map((x) => new Date(x)),
-    nice
-  }
+  const scale = (x: Date) => linearScale(transform(x))
+
+  scale.ticks = (tickCount: number) => linearScale.ticks(tickCount).map((x) => new Date(x))
+  scale.nice = linearScale.nice
+
+  return scale
 }
