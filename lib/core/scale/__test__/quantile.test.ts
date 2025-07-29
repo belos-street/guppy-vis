@@ -8,9 +8,6 @@ describe('scale/quantile', () => {
     const range = ['small', 'medium', 'large', 'xlarge']
     const scale = createQuantile({ domain, range })
 
-    // 获取阈值，用于注释说明
-    const thresholds = scale.thresholds ? scale.thresholds() : []
-
     // 测试边界值和中间值的映射
     // 根据调试输出，阈值为[3.25, 5.5, 7.75]，实际分割为：
     // [1, 2, 3] -> 'small' (值 < 3.25)
@@ -50,8 +47,8 @@ describe('scale/quantile', () => {
     const scale = createQuantile({ domain, range })
 
     // 测试定义域外的值
-    expect(scale(0)).toBe('a')   // 小于最小值
-    expect(scale(60)).toBe('c')  // 大于最大值
+    expect(scale(0)).toBe('a') // 小于最小值
+    expect(scale(60)).toBe('c') // 大于最大值
   })
 
   it('should handle numeric ranges', () => {
@@ -102,7 +99,7 @@ describe('scale/quantile', () => {
     const thresholds = scale.thresholds()
     expect(thresholds).toBeInstanceOf(Array)
     expect(thresholds.length).toBe(3) // 对于4个范围值，应该有3个阈值
-    
+
     // 验证阈值的正确性（根据之前的调试信息）
     expect(thresholds[0]).toBeCloseTo(3.25, 2)
     expect(thresholds[1]).toBeCloseTo(5.5, 2)
