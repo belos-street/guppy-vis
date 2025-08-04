@@ -72,5 +72,5 @@ export function curry<F extends (...args: any[]) => any>(fn: F): Curry<F> {
     }
     return curried.bind(null, ...args)
   }
-  return curried as Curry<F>
+  return curried satisfies Curry<F>
 }

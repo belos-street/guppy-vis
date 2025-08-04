@@ -64,6 +64,7 @@ describe('utils/functional/curry', () => {
 
   it('should curry a ternary function', () => {
     const add3 = (a: number, b: number, c: number) => a + b + c
+
     const curriedAdd3 = curry(add3)
 
     expect(curriedAdd3(1, 2, 3)).toBe(6)
@@ -84,8 +85,7 @@ describe('utils/functional/curry', () => {
   })
 
   it('should work with functions that accept undefined', () => {
-    const greet = (name: string | undefined, greeting: string) => 
-      `${greeting}, ${name || 'World'}!`
+    const greet = (name: string | undefined, greeting: string) => `${greeting}, ${name || 'World'}!`
     const curriedGreet = curry(greet)
 
     expect(curriedGreet('Alice', 'Hello')).toBe('Hello, Alice!')
