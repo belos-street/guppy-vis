@@ -61,7 +61,7 @@ describe('scale/log', () => {
     const scale = createLog({
       domain: [1.5, 950],
       range: [0, 10],
-      base: 10     // 使用10为底数便于测试
+      base: 10 // 使用10为底数便于测试
     })
     const nice = scale.nice
     const ticks = scale.ticks
@@ -78,15 +78,10 @@ describe('scale/log', () => {
     // 由于nice操作可能会将上限调整为最接近的10的整数次幂（如1000），而不是精确包含950
     expect(adjustedTicks[adjustedTicks.length - 1]).toBeGreaterThanOrEqual(100)
 
-    // 打印出调整后的刻度，以便调试
-    console.log('Adjusted ticks:', adjustedTicks)
-    console.log('First tick:', adjustedTicks[0])
-    console.log('Last tick:', adjustedTicks[adjustedTicks.length - 1])
-    
     // 验证第一个和最后一个刻度是否是10的整数次幂
     const firstTick = adjustedTicks[0]
     const lastTick = adjustedTicks[adjustedTicks.length - 1]
-    
+
     // 检查是否是10的整数次幂（或接近值）
     // 放宽精度要求，使用0作为精度参数
     expect(Math.log10(firstTick) % 1).toBeCloseTo(0, 0)

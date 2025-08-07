@@ -1,8 +1,4 @@
-type Point = [number, number]
-type TransformerFn = (point: Point) => Point
-type Transformer = TransformerFn & {
-  type: () => string
-}
+import type { Point, TransformerFn, Transformer } from '../type'
 
 /**
  * 创建一个带类型标识的坐标变换函数
@@ -10,7 +6,7 @@ type Transformer = TransformerFn & {
  * @param transformer 执行坐标变换的函数
  * @returns 带有类型信息的变换函数
  */
-function transform(type: string, transformer: TransformerFn): Transformer {
+export function transform(type: string, transformer: TransformerFn): Transformer {
   const transformerWithType = transformer as Transformer
   transformerWithType.type = () => type
   return transformerWithType

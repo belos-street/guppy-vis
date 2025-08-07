@@ -1,4 +1,8 @@
-export { createCoordinate } from './coordinate'
-export { cartesian } from './cartesian'
-export { polar } from './polar'
-export { transpose } from './transpose'
+// 导出类型定义
+export * from './type'
+
+// 导出坐标系函数
+export { createCoordinate } from './src/coordinate'
+export { cartesian } from './src/cartesian'
+export { polarCoordinate as polar } from './src/polar'
+export { transposeCoordinate as transpose } from './src/transpose'
